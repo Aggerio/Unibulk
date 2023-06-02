@@ -1,0 +1,106 @@
+.up-center-text{
+    text-align: center;
+    color: #111;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.up-center-text:hover{
+    text-align: center;
+    color: #00008b;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 30px;
+  padding-top: 20px;
+}
+.cart img{
+    width: 474.4px;
+    height: 382.25px;
+    border-radius: 5px;
+}
+.update-cart{
+    display: grid;
+    padding-left: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, auto));
+    gap: 1rem;
+}
+.cart h5{
+    color: #636872;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+
+}
+.cart h5{
+    color: #111;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.cart p{
+    color: #707070;
+    font-size: 15px;
+    max-width: 380px;
+    line-height: 25px;
+    margin-bottom: 12px;
+}
+.cart h6{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.contact{
+    background-color: #d4d5d7;
+}
+
+.lower_info{
+  padding-top: 100px;
+}
+
+.contact-info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,auto));
+    gap: 3rem;
+    padding-top:19px;
+}
+
+.contact-info h4{
+    color:#212529;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.contact-info p{
+    color:#565656;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .42s;
+}
+.contact-info p:hover{
+    color: #EE1C47;
+}
+.social-iconi{
+    color: #565656;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: all .42s;
+}
+.social-iconi:hover{
+    transform: scale(1.3);
+}
+.foo-logo{
+        width: 40px;
+        height: 40px;
+        border-radius: 80%;
+        margin-bottom: 20px;
+        display: flex;
+}
