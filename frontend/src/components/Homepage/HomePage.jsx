@@ -1,6 +1,8 @@
 import Product from "../Products/Product";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import IndividualProduct from "../Products/IndividualProduct";
+import { NavLink } from "react-router-dom";
 import "./stylecom.css";
 
 export default function Homepage() {
@@ -28,7 +30,10 @@ export default function Homepage() {
         </div>
       </section>
       <div className="products">
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={4} />
+
+        <NavLink to={"/product/1"} >
+          <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={4} />
+        </NavLink>
         <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={3} />
         <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={2} />
         <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={1} />
