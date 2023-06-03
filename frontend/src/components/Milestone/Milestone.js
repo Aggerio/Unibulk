@@ -58,7 +58,7 @@ export default function Milestone(props) {
             </ul>
 
             <div id="line">
-              <div id="line-progress"></div>
+              <div id="" style={{ width: `${progress * 20} %` }}></div>
             </div>
           </div>
 

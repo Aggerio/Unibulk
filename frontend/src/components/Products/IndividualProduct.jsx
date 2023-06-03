@@ -171,7 +171,9 @@ function IndividualProduct() {
       setAdded(true);
     }
     else {
-      toast.success('Already added to Cart!', { position: toast.POSITION.TOP_RIGHT })
+      toast.success('Already added to Cart!', {
+        position: toast.POSITION.TOP_RIGHT
+      })
     }
   }
 
