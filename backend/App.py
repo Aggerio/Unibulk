@@ -48,21 +48,36 @@ def get_products():
         product_list.append(product_dict)
     return jsonify({'products': product_list})
 
+class NewProduct(db.Model):
+    __tablename__ = 'Newproduct'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(1024))
+    src_img_1 = db.Column(db.String(1024))
+    src_img_2 = db.Column(db.String(1024))
+    src_img_3 = db.Column(db.String(1024))
+    src_img_4 = db.Column(db.String(1024))
+    description = db.Column(db.String(1024))
+    content= db.Column(db.String(1024))
+    price = db.Column(db.Integer)
+    count = db.Column(db.Integer)
+
 @app.route('/product/<int:id>', methods=['GET'])
 def get_product(id):
-    product = Products.query.get(id)
-
-    if product is None:
-        return jsonify({'error': 'Product not found'}), 404
-    else:
-        return jsonify({
-            'id':product.id,
-            'name':product.name,
-            'price':product.price,
-            'star_rating': product.star_rating,
-            'myImage':product.myImage
-            })
-
+    products = NewProduct.query.all()
+    product_list = []
+    for product in products:
+        if(product.id == id):
+            product_dict = {}
+            product_dict['_id'] = product.id
+            product_dict['title'] = product.title
+            product_dict['src'] = [product.src_img_1, product.src_img_2, product.src_img_3, product.src_img_4]
+            product_dict['description'] = product.description
+            product_dict['content'] = product.content
+            product_dict['price'] = product.price
+            product_dict['count'] = product.count
+            product_list.append(product_dict)
+            return jsonify({'p': product_list})
+    return jsonify({'success': False, 'message': 'Not a valid user'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)

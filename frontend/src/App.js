@@ -75,7 +75,7 @@ function App() {
         </Route>
         <Route path="/cart" element={<Cart />}>
         </Route>
-        <Route path="/product/1" element={<div><IndividualProduct title={"Iphone"} price={200} image={"https://m.media-amazon.com/images/I/61tGu66MHoL._SY450_.jpg"} rating={"5"} reviews={13004} key={1} /> </div>}>
+        <Route path="/product/:id" element={<div><IndividualProduct /> </div>}>
         </Route>
         <Route path="/buynow" element={<div> <BuyNow /> </div>}>
         </Route>

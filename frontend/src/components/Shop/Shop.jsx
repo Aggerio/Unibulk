@@ -15,7 +15,7 @@ export default function Shop() {
       .catch(error => console.log(error));
   }, []);
 
-  return (<div><Navbar />
+  return (<div className="tr_div" style={{ "background-color": "#f5f5f5" }}><Navbar />
     <h1> List of all products</h1>
     {data.map(item => (
       <div className="products">
