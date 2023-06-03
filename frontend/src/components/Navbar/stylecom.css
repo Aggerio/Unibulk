@@ -46,8 +46,7 @@
     color: #1a1a1a;
     transition: 0.3 s ease;
 }
-#navbar li a:hover,
-#navbar li a.active {
+#navbar li a:hover {
      color: #088178;     
 }
 

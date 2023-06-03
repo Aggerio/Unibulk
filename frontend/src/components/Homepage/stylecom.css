@@ -62,6 +62,11 @@
     left: 20px; 
 }
 
+.products{
+  display:flex;
+  width: 50%;
+}
+
 .spacer_1{
   padding-top: 10px;
 }
@@ -144,12 +149,14 @@
 .center-text span{
     color: #088178;
 }
-.products,.products1{
-  padding-top: 30px;
+.products{
+    padding-top: 30px;
+    padding-left: 15%;
     display: flex;
-    grid-template-columns: repeat(auto-fit, minimax(260px,auto));
+    grid-template-columns: repeat(auto-fit, minimax(300px,auto));
     gap: 2rem;
 }
+
 .trending-product{
   padding-top: 30px;
 }

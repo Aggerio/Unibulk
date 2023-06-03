@@ -7,9 +7,13 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import Cart from './components/Cart/Cart';
+import IndividualProduct from './components/Products/IndividualProduct'
+import BuyNow from './components/BuyNow/BuyNow';
 // import ErrorPage from './Errorpage';
 // import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router, RouterProvider, Route, Routes } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 // const router = createBrowserRouter([
@@ -63,11 +67,17 @@ function App() {
         </Route>
         <Route path="/blog" element={<Blog />}>
         </Route>
+        <Route path="/login" element={<Login />}>
+        </Route>
         <Route path="/about" element={<About />}>
         </Route>
         <Route path="/contact" element={<Contact />}>
         </Route>
         <Route path="/cart" element={<Cart />}>
+        </Route>
+        <Route path="/product/1" element={<div><IndividualProduct title={"Iphone"} price={200} image={"https://m.media-amazon.com/images/I/61tGu66MHoL._SY450_.jpg"} rating={"5"} reviews={13004} key={1} /> </div>}>
+        </Route>
+        <Route path="/buynow" element={<div> <BuyNow /> </div>}>
         </Route>
       </Routes>
     </Router>

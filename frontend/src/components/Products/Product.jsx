@@ -9,24 +9,21 @@ export default function Product(props) {
   }
 
   return (
-    <div className={"row"}>
-      <img src={props.myImage} alt={props.name} onClick={handleClick} />
-      <div className={"product-text"}>
-        <h4>{props.name}</h4>
-        <h5>Sale</h5>
-        <div className={"heart-icon"}>
-          <i className={"far fa-heart"}></i>
-        </div>
-        <div className={"rating"}>
-          {/* <i className={"fas fa-star"}></i> */}
-          {/* <i className={"fas fa-star"}></i> */}
-          {/* <i className={"fas fa-star"}></i> */}
-          {/* <i className={"fas fa-star"}></i> */}
-          {/* <i className={"fas fa-star-half-alt"}></i> */}
-          <StarRating rating={props.star_rating} div_key={props.name} />
-        </div>
-        <div className={"price"}>
-          <h1>{props.price}₹</h1>
+    <div className={"products"}>
+      <div className={"rows"}>
+        <img src={props.myImage} alt={props.name} onClick={handleClick} />
+        <div className={"product-text"}>
+          <h4>{props.name}</h4>
+          <div className={"heart-icon"}>
+            <i className={"far fa-heart"}></i>
+          </div>
+          <div className={"rating"}>
+            <StarRating rating={props.star_rating} div_key={props.name} />
+          </div>
+          <div className={"price"}>
+            <h4>₹</h4>
+            <h1>500</h1>
+          </div>
         </div>
       </div>
     </div>

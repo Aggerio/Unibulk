@@ -1,17 +1,30 @@
+import { useState, useEffect } from 'react';
 import Product from "../Products/Product";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import IndividualProduct from "../Products/IndividualProduct";
+import NewsUpdate from '../News_Update/NewsUpdate';
 import { NavLink } from "react-router-dom";
+import HomepageProduct from '../Products/HomepageProduct';
+import axios from 'axios';
 import "./stylecom.css";
 
 export default function Homepage() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/allProducts')
+      .then(response => { setData(response.data.products); })
+      .catch(error => console.log(error));
+  }, []);
+
   return (
     <div className={"container"}>
 
       <Navbar />
       <section id={"hero"}>
-        <h4>Trade-in-Offer</h4>
+        <h4>Exceptional Offers</h4>
         <div className={"spacer_1"}></div>
         <h2>Super value deals</h2>
         <div className={"spacer_2"}></div>
@@ -19,7 +32,9 @@ export default function Homepage() {
         <div className={"spacer_3"}></div>
         <p>Save more with the coupons & up tp 70% off!</p>
         <div className={"spacer_4"}></div>
-        <button>Shop Now</button>
+        <a href='/shop' >
+          <button>Shop Now</button>
+        </a>
         <div className={"arrow"}>
           <a href="#trending" className={"down"}><i className={"fas fa-arrow-alt-down"}></i></a>
         </div>
@@ -28,25 +43,17 @@ export default function Homepage() {
         <div className={"center-text"}>
           <h2>Trending <span>Products</span></h2>
         </div>
-      </section>
-      <div className="products">
-
-        <NavLink to={"/product/1"} >
-          <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={4} />
-        </NavLink>
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={3} />
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={2} />
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={1} />
-      </div>
-      <div className="products">
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={4} />
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={3} />
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={2} />
-        <Product name="Iphone" myImage="https://images.macrumors.com/t/4_Y5u7SrI26w6gJYGpWcU4WinXI=/800x0/smart/article-new/2022/09/iphone-14-pro.jpg?lossy" price="100" star_rating={1} />
-      </div>
-
+        {data.map(item => (
+          <div >
+            <NavLink to={`/product/${item.id}`} style={{ textDecoration: 'none' }}>
+              <HomepageProduct name={item.name} myImage={item.myImage} price={item.price} star_rating={item.star_rating} />
+            </NavLink>
+          </div>
+        ))}
+      </section >
+      <NewsUpdate />
       <Footer />
-    </div>
+    </div >
   );
 
 }
