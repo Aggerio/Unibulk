@@ -4,7 +4,7 @@ from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://aggerio:password@localhost/hackathon'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://USERNAME:PASSWORD@localhost/hackathon'
 db = SQLAlchemy(app)
 CORS(app)
 
